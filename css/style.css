@@ -1,0 +1,42 @@
+h1{
+	font-family: 'Bangers', cursive;
+	text-align: center;
+	font-size: 60px;
+	color: red;
+	background-color: yellow;
+}
+
+body{
+	/*background-image: url("https://www.ibm.com/blogs/cloud-computing/wp-content/uploads/2016/04/amen-corner.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	opacity: .9;*/
+	background-color: lightgrey;
+}
+
+#start{
+	/*background-color: yellow;*/
+	font-family: monospace, Monaco;
+	font-size: 30px;
+	text-align: center;
+	border-radius: 50%;
+	padding: 20px;
+}
+
+#scoreboard{
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	padding: 30px;
+	font-family: ;
+}
+
+#mole{
+	display: flex;
+	align-items: flex-start;
+	width: 10px;
+}
+
+#hole{
+	width: 50px;
+}

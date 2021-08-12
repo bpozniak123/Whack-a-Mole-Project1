@@ -3,8 +3,11 @@ console.log("Whack-a-Mole")
 //Game Selectors
 const holes = document.querySelectorAll('.hole');
 const moles = document.querySelectorAll('.mole');
-const score = document.querySelector('#Score');
+const scoreBoard = document.querySelector('#Score');
 
+let lastHole;
+let gameOver = false;
+let score = 0;
 
 //Build blue print using a class - Construction of the "board"
 // class Whack{
@@ -40,17 +43,29 @@ function randomTime(min, max){
 }
 
 //function for array of holes. Need to eventually incorporate more logic to avoid mole pop up to same hole.
-function randomHoles(holes){ 
+function setHoles(holes){ 
 	const index = Math.floor(Math.random() * hole.length);
 	const hole = holes[index];
+	if (hole === lastHole) {
+		return setHoles(holes)
+	}
+	lastHole = hole;
+	return hole;
 }
-console.log(holes.length
-	)
+	console.log(holes.length)
+
+
 //Create a function for mole up
 function moleMoves(){
-	const time = 
-	const hole = 
+	const timeSetup = randomTime(500, 1000);
+	const hole = setHoles(holes);
+	hole.classList.add('up');
+	setTimeout(() =>{
+		hole.classList.remove('up');
+		if(!gameOver) moleMoves();
+	}, timeSetup);
 }
+	
 // Create the game 
 
 const gameSetup = {

@@ -31,12 +31,14 @@ body{
 	font-family: ;
 }
 
-#mole{
+.mole{
 	display: flex;
 	align-items: flex-start;
 	width: 10px;
 }
 
-#hole{
-	width: 50px;
+.hole{
+	display: flex;
+	align-items: flex-start;
+	width: 10px;
 }

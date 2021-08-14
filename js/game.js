@@ -1,40 +1,17 @@
 console.log("Whack-a-Mole")
 
+//Problem- only running game logic once
+//Problem- not displaying correct div for holeUp but is randomizing which hole is being called
+//Problem mole not moving up
+
 //Game Selectors
-const holes = document.querySelectorAll('.hole');
+const holesArr = document.querySelectorAll('.hole');
 const moles = document.querySelectorAll('.mole');
 const scoreBoard = document.querySelector('#Score');
 
 let lastHole;
 let gameOver = false;
 let score = 0;
-
-//Build blue print using a class - Construction of the "board"
-// class Whack{
-// 	constructor(name){
-// 		this.name = name;
-// 		this.timer = 30;
-// 		this.gameOver = false;
-// 		this.score = 0;
-// 		this.round = 0;
-// 		// this.highScore = [];
-// 		this.moles = [];
-// 		this.holes = [];
-// 	}
-
-// 	end() {
-// 		let timeInterval = setInterval(()=>{
-// 			this.gameGoing()
-// 			if (this.gameOver === true) {
-// 				clearInterval(timeInterval)
-// 			} 
-
-// 		})
-// 	}
-// }
-
-
-//Use methods to create variables
 
 //Create a function setting up mole to pop up randomly
 function randomTime(min, max){
@@ -43,42 +20,25 @@ function randomTime(min, max){
 }
 
 //function for array of holes. Need to eventually incorporate more logic to avoid mole pop up to same hole.
-function setHoles(holes){ 
-	const index = Math.floor(Math.random() * hole.length);
-	const hole = holes[index];
+function setHoles(holesArr){ 
+	const index = Math.floor(Math.random() * holesArr.length);
+	const hole = holesArr[index];
 	if (hole === lastHole) {
-		return setHoles(holes)
+		return setHoles(holesArr)
 	}
 	lastHole = hole;
+	console.log(holesArr)
 	return hole;
 }
-	console.log(holes.length)
 
-
-//Create a function for mole up
-function moleMoves(){
-	const timeSetup = randomTime(500, 1000);
-	const hole = setHoles(holes);
-	hole.classList.add('up');
-	setTimeout(() =>{
-		hole.classList.remove('up');
-		if(!gameOver) moleMoves();
-	}, timeSetup);
-}
-	
-// Create the game 
-
-const gameSetup = {
-	//scoreboard
-	//score
-	//gameOver
-
+//Create a function for the mole to come up
+function moleMoves() {
+	const timeSetup = randomTime(500, 1000); //how long the mole is up
+	const hole = setHoles(holesArr); //random hole from the setHoles funct above
+	// hole.classList.add('up'); 
+	hole.children[1].classList.add('up');
 }
 
-function whack(){
-	//click
-	//score++
-}
-
-
+setHoles(holesArr)
+moleMoves(moles, setHoles)
 //End game

@@ -51,12 +51,14 @@ button{
 	max-width: 50%;
 	height: auto;
 	transition: all 0.4s;
-	cursor: url(../images/hammerclean.png), auto;
+	left: 75px;
+	/*cursor: url(images/hammerclean.png), auto;*/
 }
 
 .up{
 	position: absolute;
 	top: 0;
+	left: 75px;
 }
 
 .hole{

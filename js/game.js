@@ -30,6 +30,7 @@ function setHoles(holesArr){
 	console.log(holesArr)
 	return hole;
 }
+setHoles(holesArr)
 
 //Create a function for the mole to come up
 function moleMoves() {
@@ -37,8 +38,27 @@ function moleMoves() {
 	const hole = setHoles(holesArr); //random hole from the setHoles funct above
 	// hole.classList.add('up'); 
 	hole.children[1].classList.add('up');
+	setTimeout(() =>{
+		hole.children[1].classList.remove('up');
+		if(!gameOver) {
+			moleMoves();
+		}
+	}, timeSetup);
 }
 
-setHoles(holesArr)
-moleMoves(moles, setHoles)
+function startGame(){
+	document.getElementById('Score').textContent = "Score: 0";
+	gameOver = false;
+	moleMoves(moles,setHoles);
+	setTimeout(()=> randomTime = true, 5000)
+}
+
+function whack(event){
+	if (event.isTrusted) return; //Researched/learned that Trusted Event Property is a Boolean indicating if an event is "trusted" or not
+	score++;
+	this.parentNode.classList.remove('up'); //click action on mole
+	document.getElementById('Score').textContent = score
+}
+
+startGame()
 //End game

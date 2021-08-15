@@ -5,15 +5,20 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<h1>Whack-<span style="color:  blue">A</span>-Mole</h1>
-	<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-	
-	<!-- <button type='button' id='start' onclick='gameSetup.startGame()'>Start</button> -->
+	<div id='gameTitle'>
+	<h1>Whack-<span style="color:  red">A</span>-Mole</h1>
+		<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+		<img src="images/toonMole2.png" class="toonMoleLeft">
+		<img src="images/toonMole2.png" class="toonMoleRight">
+	</div>
+
+	<button type='button' id='start' onclick='startGame()'>Start</button>
 	
 	<div id='scoreboard'>
-		<span id="Timer">Time: 0</span>
+		<span id="Timer">Time: 30</span>
 		<span id="Score">Score: 0</span>
-		<span id="Round">Round: 0</span>
+		<span id="Round">Round: 1</span>
 	</div>
 
 	<div class="container">
@@ -41,7 +46,7 @@
 		<img src="images/hole.png" class="holeImg">
 		<div class="mole"><img src="images/mole2.png"></div>
 	</div>
-	
+
 	<div class="hole hole6">
 		<img src="images/hole.png" class="holeImg">
 		<div class="mole"><img src="images/mole2.png"></div>

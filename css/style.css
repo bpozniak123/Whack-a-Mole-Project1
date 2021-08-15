@@ -5,27 +5,60 @@ body{
 	background-repeat: no-repeat;
 	opacity: .6;*/
 	background-color: lightgrey;
+	/*background-image: url(../images/elmhurst.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+*/
+}
+
+#gameTitle{
+	background-color: orange;
+	width: 1280px;
+	height: 300px;
+	background-position: center;
+	border-style: groove;
+	border-color: black;
 }
 
 h1{
 	font-family: 'Bangers', cursive;
 	text-align: center;
-	font-size: 50px;
-	color: red;
+	font-size: 35px;
+	color: blue;
+	text-shadow: 5px 5px 5px green;
 	/*background-color: yellow;*/
 	background-image: url(../images/powback.png);
 	background-repeat: no-repeat;
 	background-position: center;
-	margin: 0 10 10 10;
-	padding: 80px;
+	background-size: 325px;
+	/*margin: 0 10 10 10;*/
+	padding: 100px;
+}
+
+.toonMoleLeft{
+	margin-top: -150px;
+	margin-left: 260px;
+	margin-right: auto;
+}
+
+.toonMoleRight{
+	margin-top: -150px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 button{
-	/*background-color: yellow;*/
+	background-color: mediumblue;
 	font-family: monospace, Monaco;
-	font-size: 40px;
-	border-radius: 50%;
-	padding: 20px;
+	font-size: 20px;
+	color: white;
+	border-radius: 20%;
+	display: block;
+	margin-top: 60px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 15%;
+	padding: 30px;
 }
 
 #scoreboard{
@@ -48,12 +81,14 @@ button{
 	align-items: flex-start;
 	justify-content: space-evenly;
 	position: relative;
+	/*visibility: hidden;*/
 	max-width: 50%;
 	height: auto;
-	transition: all 0.4s;
+	transition: all 0.6s;
 	left: 75px;
 	/*cursor: url(images/hammerclean.png), auto;*/
 }
+
 
 .up{
 	position: absolute;
@@ -63,12 +98,14 @@ button{
 
 .hole{
 	position: relative;
+	overflow: hidden;
 }
 
 .holeImg{
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-evenly;
+	overflow: hidden;
 	width: 305px;
 	height: 216px;
 }

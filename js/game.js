@@ -27,7 +27,7 @@ function setHoles(holesArr){
 		return setHoles(holesArr)
 	}
 	lastHole = hole;
-	console.log(holesArr)
+	// console.log(holesArr)
 	return hole;
 }
 setHoles(holesArr)
@@ -49,16 +49,22 @@ function moleMoves() {
 function startGame(){
 	document.getElementById('Score').textContent = "Score: 0";
 	gameOver = false;
+	score = 0;
 	moleMoves(moles,setHoles);
-	setTimeout(()=> randomTime = true, 5000)
+	setTimeout(()=> randomTime = true, 5000) //Need setInterval 
 }
 
 function whack(event){
-	if (event.isTrusted) return; //Researched/learned that Trusted Event Property is a Boolean indicating if an event is "trusted" or not
+	// if (event.isTrusted) return; //Researched/learned that Trusted Event Property is a Boolean indicating if an event is "trusted" or not
 	score++;
-	this.parentNode.classList.remove('up'); //click action on mole
-	document.getElementById('Score').textContent = score
+	// this.parentNode.classList.remove('up'); //click action on mole
+	document.getElementById('Score').textContent = `Score: ${score}` 
+	console.log("We are inside whack function")
 }
 
-startGame()
+moles.forEach(mole => mole.addEventListener('click', ()=>{
+	whack()
+}))
+
+// startGame()
 //End game

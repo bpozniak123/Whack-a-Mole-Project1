@@ -1,22 +1,19 @@
 console.log("Whack-a-Mole")
 
-//Problem- only running game logic once
-//Problem- not displaying correct div for holeUp but is randomizing which hole is being called
-//Problem mole not moving up
-
 //Game Selectors
 const holesArr = document.querySelectorAll('.hole');
 const moles = document.querySelectorAll('.mole');
 const scoreBoard = document.querySelector('#Score');
 
 let lastHole;
-let gameOver = false;
+let roundOver = false;
 let score = 0;
+let timer = 10;
+let round = 1;
 
 //Create a function setting up mole to pop up randomly
 function randomTime(min, max){
 	return Math.random() * (max - min) + min;
-
 }
 
 //function for array of holes. Need to eventually incorporate more logic to avoid mole pop up to same hole.
@@ -36,35 +33,48 @@ setHoles(holesArr)
 function moleMoves() {
 	const timeSetup = randomTime(500, 1000); //how long the mole is up
 	const hole = setHoles(holesArr); //random hole from the setHoles funct above
-	// hole.classList.add('up'); 
 	hole.children[1].classList.add('up');
 	setTimeout(() =>{
 		hole.children[1].classList.remove('up');
-		if(!gameOver) {
-			moleMoves();
-		}
+		// if(!roundOver) {
+		// 	moleMoves();
+		// }
 	}, timeSetup);
 }
 
-function startGame(){
-	document.getElementById('Score').textContent = "Score: 0";
-	gameOver = false;
-	score = 0;
-	moleMoves(moles,setHoles);
-	setTimeout(()=> randomTime = true, 5000) //Need setInterval 
-}
+// const gameTime = setInterval(() => {
+// 	const timerElement = document.querySelector('#Timer');
+// 	timerElement.innerText = `Time: ${timer}`;
+// 	timer--;
+
+// 	if(!roundOver) {
+// 			moleMoves();
+// 		}
+
+// 	if(timer === -1){
+// 		clearInterval(gameTime)
+// 		document.querySelector('start').disabled = false
+// 		console.log(timer)
+// 	}
+// },1000)
+
+
+
+// function startGame(){
+// 	document.getElementById('Score').textContent = "Score: 0";
+// 	document.getElementById('Round').textContent = "Round: 1";
+// 	moleMoves(moles,setHoles);
+
+// }
 
 function whack(event){
-	// if (event.isTrusted) return; //Researched/learned that Trusted Event Property is a Boolean indicating if an event is "trusted" or not
 	score++;
-	// this.parentNode.classList.remove('up'); //click action on mole
 	document.getElementById('Score').textContent = `Score: ${score}` 
-	console.log("We are inside whack function")
+	console.log("Take that mole!")
 }
 
 moles.forEach(mole => mole.addEventListener('click', ()=>{
 	whack()
 }))
 
-// startGame()
 //End game

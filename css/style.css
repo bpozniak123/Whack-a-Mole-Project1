@@ -1,19 +1,23 @@
 body{
 	/*background-image: url("https://www.ibm.com/blogs/cloud-computing/wp-content/uploads/2016/04/amen-corner.jpg");*/
-	/*background-image: url(../images/elmhurst.jpeg);
+	background-image: url(../images/elmhurst.jpeg);
 	background-size: cover;
 	background-repeat: no-repeat;
-	opacity: .6;*/
+	/*opacity: .6;*/
 	background-color: lightgrey;
 	/*background-image: url(../images/elmhurst.jpeg);
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: cover;	
 */
+}
+
+.container1{
+	align-items: baseline | flex-start | flex-end;
 }
 
 #gameTitle{
 	background-color: orange;
-	width: 1280px;
+	width: 100%;
 	height: 300px;
 	background-position: center;
 	border-style: groove;
@@ -37,7 +41,7 @@ h1{
 
 .toonMoleLeft{
 	margin-top: -150px;
-	margin-left: 260px;
+	margin-left: 320px;
 	margin-right: auto;
 }
 
@@ -48,13 +52,15 @@ h1{
 }
 
 button{
+	display: flex;
+	align-items: flex-end;
 	background-color: mediumblue;
 	font-family: monospace, Monaco;
 	font-size: 20px;
 	color: white;
 	border-radius: 20%;
-	display: block;
-	margin-top: 60px;
+	/*display: block;*/
+	/*margin-top: 60px;*/
 	margin-left: auto;
 	margin-right: auto;
 	width: 15%;
@@ -64,13 +70,14 @@ button{
 #scoreboard{
 	display: flex;
 	align-items: flex-start;
-	justify-content: space-evenly;
+	flex-direction: column;
+	justify-content: flex-start;
 	padding: 50px;
 	font-family: ;
 	font-size: 20px;
 }
 
-.container{
+.container2{
 	display: flex;
 	align-items: flex-start;
 	flex-wrap: wrap;

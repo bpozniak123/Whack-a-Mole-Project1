@@ -24,7 +24,6 @@ function setHoles(holesArr){
 		return setHoles(holesArr)
 	}
 	lastHole = hole;
-	// console.log(holesArr)
 	return hole;
 }
 setHoles(holesArr)
@@ -36,36 +35,35 @@ function moleMoves() {
 	hole.children[1].classList.add('up');
 	setTimeout(() =>{
 		hole.children[1].classList.remove('up');
-		// if(!roundOver) {
-		// 	moleMoves();
-		// }
+		
 	}, timeSetup);
 }
 
-// const gameTime = setInterval(() => {
-// 	const timerElement = document.querySelector('#Timer');
-// 	timerElement.innerText = `Time: ${timer}`;
-// 	timer--;
+let gameTime = setInterval(() => {
+	const timerElement = document.querySelector('#Timer');
+	timerElement.innerText = `Time: ${timer}`;
+	timer--;
 
-// 	if(!roundOver) {
-// 			moleMoves();
-// 		}
+	if(!roundOver) {
+			moleMoves();
+		}
 
-// 	if(timer === -1){
-// 		clearInterval(gameTime)
-// 		document.querySelector('start').disabled = false
-// 		console.log(timer)
-// 	}
-// },1000)
+	if(timer === -1){
+		clearInterval(gameTime)
+		document.querySelector('start').disabled = false
+		document.getElementById('endOfRound').style.display='block'
+		console.log(timer)
+	}
+},1000)
 
 
 
-// function startGame(){
-// 	document.getElementById('Score').textContent = "Score: 0";
-// 	document.getElementById('Round').textContent = "Round: 1";
-// 	moleMoves(moles,setHoles);
+function startGame(){
+	document.getElementById('Score').textContent = "Score: 0";
+	document.getElementById('Round').textContent = "Round: 1";
 
-// }
+	moleMoves(moles,setHoles);
+}
 
 function whack(event){
 	score++;
@@ -77,4 +75,16 @@ moles.forEach(mole => mole.addEventListener('click', ()=>{
 	whack()
 }))
 
+// let niceScoreImg = document.querySelector("img")
+
+
+function niceScore(){
+	if (score >= 5){
+		return document.getElementById('endOfRound')
+	}else{
+		return document.getElementById()
+	}
+}
+
+niceScore()
 //End game

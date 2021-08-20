@@ -128,7 +128,7 @@ button{
 	transition: all 0.6s;
 	/*left: 0;
 	bottom: 0;*/
-	/*cursor: url(images/hammerclean.png), auto;*/
+	cursor: url(images/hammerclean.png), auto;
 }
 
 /*@keyframes moleAppears{
@@ -162,10 +162,19 @@ button{
 	margin-top: 75%;
 }
 
-.endRoundImg{
-	position: relative;
-	margin-top: 300px;
+/*#inRoundImg{
+	margin-left: auto;
+	margin-right: auto;
+	height: 20px;
+	width: 20px;
+	animation-name: animateImg;
+	animation-duration: 2s;
 }
+
+@keyframes animateImg{
+	from{margin-left: auto;}
+	to{margin-left: -50px;}
+}*/
 
 .hole.up.mole{
 	top: 20px;

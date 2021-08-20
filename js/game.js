@@ -10,6 +10,7 @@ let roundOver = false;
 let score = 0;
 let timer = 10;
 let round = 1;
+let whackSound = new Audio ("./images/whacksound.mp3");
 
 //Create a function setting up mole to pop up randomly
 function randomTime(min, max){
@@ -59,21 +60,23 @@ function startGame(){
 		console.log(timer)
 		}
 	},1000)
-
-	moleMoves(moles,setHoles);
 	// niceScore()
+	moleMoves(moles,setHoles);
 
 }
 
 function whack(event){
 	score++;
 	document.getElementById('Score').textContent = `Score: ${score}` 
+	whackSound.play()
 	console.log("Take that mole!")
 }
 
 moles.forEach(mole => mole.addEventListener('click', ()=>{
 	whack()
 }))
+
+
 
 // function niceScore(){
 // 	if (score >= 5){

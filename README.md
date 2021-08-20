@@ -19,6 +19,7 @@ If player successfully clicks on a mole before it goes back down, 1 point is ear
 When the timer or Time hits 0 or expires, then the round/game is over. 
 
 Updates to be made:
-Add additional rounds.
+Add additional rounds and increase difficulty (adjust moles interval to pop up quicker).
 Add high score field and JavaScript functions to build array of scores, as well as, isolate high score to be displayed. 
 Incorporate audio and more animation for high score and low score.
+Add time to current round if player reaches 'x' score. 
